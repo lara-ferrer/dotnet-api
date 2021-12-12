@@ -7,6 +7,6 @@ namespace PasswordAPI {
         public string Password { get; set; }
         public string CreationDate { get; set; }
         public string Description { get; set; }
-        public CategoryItem Category { get; set; }
+        public int CategoryId { get; set; }
     }
 }
