@@ -16,6 +16,11 @@ namespace PasswordAPI.Controllers
             new SiteItem { Id = 2, Name = "Twitter", Url = "https://www.twitter.com/", CategoryId = 1, CreationDate="05/12/21", User="twitter", Password = "1234", Description = "Sitio web"},
             new SiteItem { Id = 3, Name = "Instagram", Url = "https://www.instagram.com/", CategoryId = 1, CreationDate="05/12/21", User="instagram", Password = "1234", Description = "Sitio web"},
             new SiteItem { Id = 4, Name = "LinkedIn", Url = "https://www.linkedin.com/", CategoryId = 1, CreationDate="05/12/21", User="linkedin", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 5, Name = "Notion", Url = "https://www.notion.so/", CategoryId = 2, CreationDate="12/12/21", User="notion", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 6, Name = "Office 365", Url = "https://www.office.com/", CategoryId = 2, CreationDate="12/12/21", User="office", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 7, Name = "Slack", Url = "https://slack.com/", CategoryId = 2, CreationDate="12/12/21", User="slack", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 8, Name = "Twitch", Url = "https://www.twitch.tv/", CategoryId = 3, CreationDate="12/12/21", User="twitch", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 9, Name = "Youtube", Url = "https://www.youtube.com/", CategoryId = 3, CreationDate="12/12/21", User="youtube", Password = "1234", Description = "Sitio web"},
         };
 
         [HttpGet]
