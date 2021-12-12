@@ -11,12 +11,16 @@ namespace PasswordAPI.Controllers
     [Route("[controller]")]
     public class SiteController : ControllerBase
     {
-        public static CategoryItem category = new CategoryItem(1, "Redes Sociales");
         public static List<SiteItem> Sites = new List<SiteItem> {
-            new SiteItem { Id = 1, Name = "Facebook", Url = "https://www.facebook.com/", Category = category, CreationDate="05/12/21", User="facebook", Password = "1234", Description = "Sitio web"},
-            new SiteItem { Id = 2, Name = "Twitter", Url = "https://www.twitter.com/", Category = category, CreationDate="05/12/21", User="twitter", Password = "1234", Description = "Sitio web"},
-            new SiteItem { Id = 3, Name = "Instagram", Url = "https://www.instagram.com/", Category = category, CreationDate="05/12/21", User="instagram", Password = "1234", Description = "Sitio web"},
-            new SiteItem { Id = 4, Name = "LinkedIn", Url = "https://www.linkedin.com/", Category = category, CreationDate="05/12/21", User="linkedin", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 1, Name = "Facebook", Url = "https://www.facebook.com/", CategoryId = 1, CreationDate="05/12/21", User="facebook", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 2, Name = "Twitter", Url = "https://www.twitter.com/", CategoryId = 1, CreationDate="05/12/21", User="twitter", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 3, Name = "Instagram", Url = "https://www.instagram.com/", CategoryId = 1, CreationDate="05/12/21", User="instagram", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 4, Name = "LinkedIn", Url = "https://www.linkedin.com/", CategoryId = 1, CreationDate="05/12/21", User="linkedin", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 5, Name = "Notion", Url = "https://www.notion.so/", CategoryId = 2, CreationDate="12/12/21", User="notion", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 6, Name = "Office 365", Url = "https://www.office.com/", CategoryId = 2, CreationDate="12/12/21", User="office", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 7, Name = "Slack", Url = "https://slack.com/", CategoryId = 2, CreationDate="12/12/21", User="slack", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 8, Name = "Twitch", Url = "https://www.twitch.tv/", CategoryId = 3, CreationDate="12/12/21", User="twitch", Password = "1234", Description = "Sitio web"},
+            new SiteItem { Id = 9, Name = "Youtube", Url = "https://www.youtube.com/", CategoryId = 3, CreationDate="12/12/21", User="youtube", Password = "1234", Description = "Sitio web"},
         };
 
         [HttpGet]
@@ -25,9 +29,9 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{Id}")]
-        public ActionResult<SiteItem> Get(int Id) {
-            var siteItem = Sites.Find(x => x.Id == Id);
+        [Route("{CategoryId}")]
+        public ActionResult<List<SiteItem>> Get(int CategoryId) {
+            var siteItem = Sites.FindAll(x => x.CategoryId == CategoryId);
             return siteItem == null ? NotFound() : Ok(siteItem);
         }
 
