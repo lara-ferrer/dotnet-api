@@ -29,9 +29,16 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{CategoryId}")]
-        public ActionResult<List<SiteItem>> Get(int CategoryId) {
+        [Route("GetByCategoryID/{CategoryId}")]
+        public ActionResult<List<SiteItem>> GetByCategoryId(int CategoryId) {
             var siteItem = Sites.FindAll(x => x.CategoryId == CategoryId);
+            return siteItem == null ? NotFound() : Ok(siteItem);
+        }
+
+        [HttpGet]
+        [Route("GetBySiteID/{SiteId}")]
+        public ActionResult<List<SiteItem>> GetBySiteId(int SiteId) {
+            var siteItem = Sites.FindAll(x => x.Id == SiteId);
             return siteItem == null ? NotFound() : Ok(siteItem);
         }
 
