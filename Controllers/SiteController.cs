@@ -45,8 +45,8 @@ namespace PasswordAPI.Controllers
         [HttpPost]
         public ActionResult Post(SiteItem siteItem) {
             var existingSiteItem = Sites.Find(x => x.Id == siteItem.Id);
-            if (existingSiteItem != null) {
-                return Conflict("Ya existe un sitio con esa ID.");
+            if (existingSiteItem == null) {
+                return Conflict("No existe un sitio con esa ID.");
             } else {
                 Sites.Add(siteItem);
                 var resourceUrl = Request.Path.ToString() + "/" + siteItem.Id;
