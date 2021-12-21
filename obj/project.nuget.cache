@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xq+LSKb8c9ZMuGIlhAPnUSRZEUmj1yuDtz63V8OZvECb7v+wmdvqcqKmP2aT7aj2CrkXdjs5WczOnNaFSDu6IA==",
+  "dgSpecHash": "2DLtKF80rD039vHNNlnEMfE5MHMdsD4m0cJ6U6TwMmsgE3ifLGCNtn+N0DltTemIbJBkPbDvHx6VmAIhWrAFRQ==",
   "success": true,
   "projectFilePath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contrasenas/PasswordAPI/PasswordAPI.csproj",
   "expectedPackageFiles": [
     "/Users/user/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/user/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "/Users/user/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "/Users/user/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",

@@ -45,8 +45,8 @@ namespace PasswordAPI.Controllers
         [HttpPost]
         public ActionResult Post(SiteItem siteItem) {
             var existingSiteItem = Sites.Find(x => x.Id == siteItem.Id);
-            if (existingSiteItem != null) {
-                return Conflict("Ya existe un sitio con esa ID.");
+            if (existingSiteItem == null) {
+                return Conflict("No existe un sitio con esa ID.");
             } else {
                 Sites.Add(siteItem);
                 var resourceUrl = Request.Path.ToString() + "/" + siteItem.Id;
@@ -55,17 +55,13 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpPut]
-        public ActionResult Put(int Id, string Name, string Url, string User, string Password, string Description) {
-            var existingSiteItem = Sites.Find(x => x.Id == Id);
+        public ActionResult Put(SiteItem siteItem) {
+            var existingSiteItem = Sites.Find(x => x.Id == siteItem.Id);
             if (existingSiteItem == null) {
                 return Conflict("No existe un sitio con esa ID.");
             } else {
-                existingSiteItem.Name = Name;
-                existingSiteItem.Url = Url;
-                existingSiteItem.User = User;
-                existingSiteItem.Password = Password;
-                existingSiteItem.Description = Description;
-                var resourceUrl = Request.Path.ToString() + "/" + Id;
+                existingSiteItem.Name = siteItem.Name;
+                var resourceUrl = Request.Path.ToString() + "/" + siteItem.Id;
                 return Ok();
             }
         }
