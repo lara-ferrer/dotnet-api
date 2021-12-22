@@ -36,14 +36,14 @@ namespace PasswordAPI.Controllers
         [Route("GetByCategoryID/{CategoryId}")]
         public ActionResult<List<SiteItem>> GetByCategoryId(int CategoryId) {
             var siteItem = Sites.FindAll(x => x.CategoryId == CategoryId);
-            return siteItem == null ? NotFound() : Ok(siteItem);
+            return siteItem == null ? NotFound("No existe una categoría con esa ID.") : Ok(siteItem);
         }
 
         [HttpGet]
         [Route("GetBySiteID/{SiteId}")]
         public ActionResult GetBySiteId(int SiteId) {
             var siteItem = Sites.FindAll(x => x.Id == SiteId);
-            return siteItem == null ? NotFound() : Ok(siteItem);
+            return siteItem == null ? NotFound("No existe un sitio con esa ID.") : Ok(siteItem);
         }
 
         [HttpPost]
@@ -66,7 +66,7 @@ namespace PasswordAPI.Controllers
             } else {
                 existingSiteItem.Name = siteItem.Name;
                 var resourceUrl = Request.Path.ToString() + "/" + siteItem.Id;
-                return Ok();
+                return Ok("Sitio actualizado con éxito.");
             }
         }
 

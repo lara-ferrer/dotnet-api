@@ -47,7 +47,7 @@ namespace PasswordAPI.Controllers
             } else {
                 existingCategoryItem.Name = categoryItem.Name;
                 var resourceUrl = Request.Path.ToString() + "/" + categoryItem.Id;
-                return Ok();
+                return Ok("Categoría actualizada con éxito.");
             }
         }
 
