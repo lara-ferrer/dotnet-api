@@ -20,7 +20,11 @@ namespace PasswordAPI.Controllers
 
         [HttpGet]
         public ActionResult<List<CategoryItem>> Get() {
-            return Ok(Categories);
+            if (Categories == null) {
+                return NotFound("No se han encontrado categorías.");
+            } else {
+                return Ok(Categories);
+            }
         }
 
         [HttpPost]
@@ -32,6 +36,18 @@ namespace PasswordAPI.Controllers
                 Categories.Add(categoryItem);
                 var resourceUrl = Request.Path.ToString() + "/" + categoryItem.Id;
                 return Created(resourceUrl, categoryItem);
+            }
+        }
+
+        [HttpPut]
+        public ActionResult Put(CategoryItem categoryItem) {
+            var existingCategoryItem = Categories.Find(x => x.Id == categoryItem.Id);
+            if (existingCategoryItem == null) {
+                return Conflict("No existe una categoría con esa ID.");
+            } else {
+                existingCategoryItem.Name = categoryItem.Name;
+                var resourceUrl = Request.Path.ToString() + "/" + categoryItem.Id;
+                return Ok();
             }
         }
 
