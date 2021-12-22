@@ -30,10 +30,20 @@ namespace PasswordAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PasswordAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "PasswordAPI",
+                    Description = "A web API developed in .NET that allows to fetch data from saved sites and its categories.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Lara Ferrer",
+                        Url = new Uri("https://github.com/lara-ferrer/dotnet-api"),
+                    },
+                });   
             });
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -50,7 +60,11 @@ namespace PasswordAPI
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PasswordAPI v1"));
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
