@@ -235,11 +235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contrasenas/PasswordAPI/PasswordAPI.csproj",
+      "projectUniqueName": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contraseñas/PasswordAPI/PasswordAPI.csproj",
       "projectName": "PasswordAPI",
-      "projectPath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contrasenas/PasswordAPI/PasswordAPI.csproj",
+      "projectPath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contraseñas/PasswordAPI/PasswordAPI.csproj",
       "packagesPath": "/Users/user/.nuget/packages/",
-      "outputPath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contrasenas/PasswordAPI/obj/",
+      "outputPath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contraseñas/PasswordAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/user/.nuget/NuGet/NuGet.Config"

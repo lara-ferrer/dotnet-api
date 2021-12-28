@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2DLtKF80rD039vHNNlnEMfE5MHMdsD4m0cJ6U6TwMmsgE3ifLGCNtn+N0DltTemIbJBkPbDvHx6VmAIhWrAFRQ==",
+  "dgSpecHash": "N3wDmlfga45R2+lV6kfPKFRPcM5K95Gbd55zokN/GEui9NwIIZZkIv4lj7FXz9VAiZli7+WXd6u4thbPvLqeZw==",
   "success": true,
-  "projectFilePath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contrasenas/PasswordAPI/PasswordAPI.csproj",
+  "projectFilePath": "/Users/user/Desktop/DAW/DESARROLLO CLIENTE/gestor-contraseñas/PasswordAPI/PasswordAPI.csproj",
   "expectedPackageFiles": [
     "/Users/user/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
