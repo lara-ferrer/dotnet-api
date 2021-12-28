@@ -10,7 +10,7 @@ namespace PasswordAPI.Controllers
     [ApiController]
     [Route("[controller]")]
 
-    public class CategoryController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
         public static List<CategoryItem> Categories = new List<CategoryItem> {
             new CategoryItem (1, "Redes Sociales"),
@@ -28,9 +28,9 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{Id}")]
-        public ActionResult<List<CategoryItem>> Get(int Id) {
-            var categoryItem = Categories.FindAll(x => x.Id == Id);
+        [Route("{CategoryId}")]
+        public ActionResult<List<CategoryItem>> Get(int CategoryId) {
+            var categoryItem = Categories.FindAll(x => x.Id == CategoryId);
             return categoryItem == null ? NotFound("No existe una categoría con esa ID.") : Ok(categoryItem);
         }
 
@@ -59,9 +59,9 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("{Id}")]
-        public ActionResult Delete(int Id) {
-            var categoryItem = Categories.Find(x => x.Id == Id);
+        [Route("{CategoryId}")]
+        public ActionResult Delete(int CategoryId) {
+            var categoryItem = Categories.Find(x => x.Id == CategoryId);
             if (categoryItem == null) {
                 return NotFound("No existe una categoría con esa ID.");
             } else {

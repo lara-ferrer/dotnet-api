@@ -9,7 +9,7 @@ namespace PasswordAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SiteController : ControllerBase
+    public class SitesController : ControllerBase
     {
         public static List<SiteItem> Sites = new List<SiteItem> {
             new SiteItem { Id = 1, Name = "Facebook", Url = "https://www.facebook.com/", CategoryId = 1, CreationDate="05/12/2021", User="facebook", Password = "1234", Description = "Sitio web"},
@@ -33,14 +33,14 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetByCategoryID/{CategoryId}")]
+        [Route("{CategoryId}/Categories")]
         public ActionResult<List<SiteItem>> GetByCategoryId(int CategoryId) {
             var siteItem = Sites.FindAll(x => x.CategoryId == CategoryId);
             return siteItem == null ? NotFound("No existe una categoría con esa ID.") : Ok(siteItem);
         }
 
         [HttpGet]
-        [Route("GetBySiteID/{SiteId}")]
+        [Route("{SiteId}")]
         public ActionResult GetBySiteId(int SiteId) {
             var siteItem = Sites.FindAll(x => x.Id == SiteId);
             return siteItem == null ? NotFound("No existe un sitio con esa ID.") : Ok(siteItem);
@@ -71,8 +71,9 @@ namespace PasswordAPI.Controllers
         }
 
         [HttpDelete]
-        public ActionResult Delete(int Id) {
-            var siteItem = Sites.Find(x => x.Id == Id);
+        [Route("{SiteId}")]
+        public ActionResult Delete(int SiteId) {
+            var siteItem = Sites.Find(x => x.Id == SiteId);
             if (siteItem == null) {
                 return NotFound("No existe un sitio con esa ID.");
             } else {
